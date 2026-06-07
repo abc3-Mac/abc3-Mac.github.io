@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albert Collver — Open-Source Projects</title>
+<meta name="description" content="Open-source tools for podcasters and researchers. CastPolish: a free local alternative to Auphonic for podcast audio processing.">
+<script defer src="https://analytics.collver.biz/script.js" data-website-id="ce262ed2-0a91-4564-abcf-32f0dd374de1"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0f0f1a;
+    --surface: #18182a;
+    --surface2: #22223a;
+    --border: #30304a;
+    --accent: #7c6af7;
+    --accent2: #a593ff;
+    --text: #ddddf0;
+    --muted: #7878a0;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 2.5rem 2rem 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .5rem;
+  }
+
+  .logo-icon {
+    width: 42px; height: 42px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .logo-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+  }
+
+  .logo-name span { color: var(--accent); }
+
+  header p {
+    color: var(--muted);
+    font-size: .95rem;
+    margin-left: 54px;
+  }
+
+  /* ── Nav ── */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  nav ul {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: .6rem 0;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .875rem;
+    transition: color .15s;
+  }
+
+  nav a:hover { color: var(--accent2); }
+
+  /* ── Main ── */
+  main {
+    flex: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+
+  /* ── Hero project card ── */
+  .hero-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+
+  .project-tag {
+    display: inline-block;
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--accent);
+    background: rgba(124,106,247,.12);
+    border: 1px solid rgba(124,106,247,.25);
+    border-radius: 4px;
+    padding: .2rem .55rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-card h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: .75rem;
+  }
+
+  .hero-card h1 span { color: var(--accent); }
+
+  .hero-card .tagline {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: .75rem;
+    margin-bottom: 2rem;
+  }
+
+  .feat {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-size: .82rem;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+
+  .feat-icon { color: var(--accent); flex-shrink: 0; font-size: 1rem; }
+
+  .btn-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .6rem 1.25rem;
+    border-radius: 8px;
+    font-size: .875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity .15s, transform .1s;
+    cursor: pointer;
+  }
+
+  .btn:hover { opacity: .88; transform: translateY(-1px); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+
+  /* ── Updates section ── */
+  .section-header {
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    padding-bottom: .4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .updates { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 2.5rem; }
+
+  .update-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .15s, background .15s;
+  }
+
+  .update-item:hover {
+    border-color: var(--accent);
+    background: rgba(124,106,247,.05);
+  }
+
+  .update-date {
+    font-size: .7rem;
+    color: var(--muted);
+    white-space: nowrap;
+    min-width: 70px;
+  }
+
+  .update-title {
+    font-size: .875rem;
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .update-arrow { color: var(--muted); font-size: .8rem; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: .78rem;
+  }
+
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent2); }
+
+  @media (max-width: 600px) {
+    .hero-card { padding: 1.5rem; }
+    .hero-card h1 { font-size: 1.5rem; }
+    header p { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">▶</div>
+    <div class="logo-name">Albert <span>Collver</span></div>
+  </div>
+  <p>Open-source tools for podcasters &amp; researchers &nbsp;·&nbsp; Ph.D.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="https://github.com/abc3-Mac">GitHub</a></li>
+    <li><a href="https://news.collver.biz">Blog</a></li>
+    <li><a href="https://github.com/abc3-Mac/castpolish">CastPolish</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <div class="hero-card">
+    <div class="project-tag">Featured Project</div>
+    <h1><span>Cast</span>Polish</h1>
+    <p class="tagline">
+      A free, local, open-source alternative to Auphonic for podcast audio post-production.
+      Loudness normalization, noise reduction, Whisper transcription, AI shownotes, and
+      speaker diarization — all on your Mac, no cloud, no subscription.
+    </p>
+
+    <div class="features">
+      <div class="feat"><span class="feat-icon">🎚️</span> EBU R128 loudness normalization</div>
+      <div class="feat"><span class="feat-icon">🔇</span> Tiered noise reduction (afftdn / noisereduce)</div>
+      <div class="feat"><span class="feat-icon">📝</span> Whisper transcription + WebVTT captions</div>
+      <div class="feat"><span class="feat-icon">🤖</span> AI shownotes via Ollama (local LLM)</div>
+      <div class="feat"><span class="feat-icon">🎙️</span> Speaker diarization (pyannote.audio)</div>
+      <div class="feat"><span class="feat-icon">🖥️</span> Native macOS .app launcher</div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/abc3-Mac/castpolish">
+        ★ View on GitHub
+      </a>
+      <a class="btn btn-secondary" href="https://news.collver.biz/castpolish-free-open-source-audio-processing-for-your-podcast/">
+        Read the blog post →
+      </a>
+    </div>
+  </div>
+
+  <div class="section-header">Recent Updates</div>
+  <div class="updates">
+    <a class="update-item" href="https://news.collver.biz/castpolish-update-tiered-noise-reduction-app-bundle-fix/">
+      <span class="update-date">Jun 2026</span>
+      <span class="update-title">Tiered noise reduction dropdown + app bundle path fix</span>
+      <span class="update-arrow">→</span>
+    </a>
+    <a class="update-item" href="https://news.collver.biz/castpolish-now-runs-on-windows-and-linux/">
+      <span class="update-date">Jun 2026</span>
+      <span class="update-title">CastPolish now runs on Windows and Linux</span>
+      <span class="update-arrow">→</span>
+    </a>
+    <a class="update-item" href="https://news.collver.biz/castpolish-updates-light-dark-mode-transcribe-only-speaker-diarization/">
+      <span class="update-date">Jun 2026</span>
+      <span class="update-title">Light/dark mode, transcribe-only toggle, speaker diarization setup</span>
+      <span class="update-arrow">→</span>
+    </a>
+    <a class="update-item" href="https://news.collver.biz/castpolish-free-open-source-audio-processing-for-your-podcast/">
+      <span class="update-date">May 2026</span>
+      <span class="update-title">CastPolish — free open-source audio processing for your podcast</span>
+      <span class="update-arrow">→</span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    Albert Bernard Collver III &nbsp;·&nbsp;
+    <a href="https://github.com/abc3-Mac">GitHub</a> &nbsp;·&nbsp;
+    <a href="https://news.collver.biz">Blog</a>
+  </p>
+</footer>
+
+</body>
+</html>
