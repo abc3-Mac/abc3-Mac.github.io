@@ -139,6 +139,15 @@
   .update-tag.gold { background: rgba(201,168,76,.12); color: var(--accent-gold2); }
   .update-arrow { color: var(--muted); font-size: .8rem; }
 
+  /* ESSFTA maroon accent */
+  .project-card.accent-maroon::before { background: linear-gradient(90deg, #6B2327, #C8A24A); }
+  .tag-maroon { color: #b04a44; background: rgba(176,74,68,.12); border: 1px solid rgba(176,74,68,.28); }
+  .project-card h2 .accent-maroon-text { color: #b04a44; }
+  .feat-icon-maroon { color: #c97f78; }
+  .badge-maroon { background: rgba(176,74,68,.14); color: #c97f78; border: 1px solid rgba(176,74,68,.3); }
+  .btn-maroon { background: #6B2327; color: #fff; }
+  .update-tag.maroon { background: rgba(176,74,68,.16); color: #c97f78; }
+
   footer { border-top: 1px solid var(--border); padding: 1.5rem 2rem; text-align: center; color: var(--muted); font-size: .78rem; }
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--accent2); }
@@ -168,6 +177,7 @@
     <li><a href="https://news.collver.biz">Blog</a></li>
     <li><a href="https://github.com/abc3-Mac/castpolish">CastPolish</a></li>
     <li><a href="https://github.com/abc3-Mac/lutheran-lectionary">Lutheran Lectionary</a></li>
+    <li><a href="https://news.collver.biz/essfta-breed-group-rankings/">ESSFTA Rankings</a></li>
   </ul>
 </nav>
 
@@ -245,22 +255,58 @@
       </div>
     </div>
 
+    <!-- ESSFTA Quarterly Rankings -->
+    <div class="project-card accent-maroon">
+      <div class="project-tag tag-maroon">Dog Sport Records</div>
+      <h2><span class="accent-maroon-text">ESSFTA</span> Quarterly Rankings</h2>
+      <p class="tagline">
+        Fourteen years of English Springer Spaniel Field Trial Association rankings — Breed/Group,
+        Obedience, Agility &amp; Rally — gathered from dozens of separate PDFs into one searchable page.
+      </p>
+
+      <div class="platform-row">
+        <span class="platform-badge badge-maroon">🐕 ESSFTA Parent Club</span>
+        <span class="platform-badge badge-full">✅ Web · Ghost &amp; WordPress-ready</span>
+      </div>
+
+      <div class="features">
+        <div class="feat"><span class="feat-icon feat-icon-maroon">🐾</span> All four sports in one place, 2013–2026</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">🔎</span> Search, filter &amp; sort by dog or owner</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">🏆</span> ~2,800 rankings · ~1,900 dogs</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">📄</span> One-click PDF export of any view</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">ℹ️</span> Built-in title/class history per sport</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">🔤</span> Names cleaned, AKC titles preserved</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">⚖️</span> Ties preserved · honest coverage notes</div>
+        <div class="feat"><span class="feat-icon feat-icon-maroon">🗄️</span> Every figure traces to an official report</div>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-maroon" href="https://news.collver.biz/essfta-breed-group-rankings/">🐕 Live page</a>
+        <a class="btn btn-secondary" href="https://news.collver.biz/every-essfta-quarterly-ranking-2013-2026-now-in-one-searchable-page/">Blog post →</a>
+      </div>
+    </div>
+
   </div>
 
   <div class="section-header">Recent Updates</div>
   <div class="updates">
 
+    <a class="update-item" href="https://news.collver.biz/every-essfta-quarterly-ranking-2013-2026-now-in-one-searchable-page/">
+      <span class="update-date">Jun 2026</span>
+      <span class="update-title">ESSFTA Quarterly Rankings — fourteen years of Breed/Group, Obedience, Agility &amp; Rally standings in one searchable page</span>
+      <span class="update-tag maroon">New</span>
+      <span class="update-arrow">→</span>
+    </a>
+
     <a class="update-item" href="https://news.collver.biz/the-almanac-moon-phases-the-date-of-easter-and-a-calculator-back-to-the-exodus/">
       <span class="update-date">Jun 2026</span>
       <span class="update-title">Lutheran Lectionary — the Almanac: moon phases, the date of Easter, Passover back to the Exodus &amp; U.S. civil holidays</span>
-      <span class="update-tag gold">New</span>
       <span class="update-arrow">→</span>
     </a>
 
     <a class="update-item" href="https://news.collver.biz/stable-beats-fast-the-apple-gpu-crash-that-taught-castpolish-to-use-the-cpu/">
       <span class="update-date">Jun 2026</span>
       <span class="update-title">CastPolish v1.7.1 — stable CPU diarization after an Apple-GPU crash</span>
-      <span class="update-tag">New</span>
       <span class="update-arrow">→</span>
     </a>
 
