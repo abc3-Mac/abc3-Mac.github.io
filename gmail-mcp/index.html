@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gmail-mcp — read-only Gmail search for Claude Code</title>
+<meta name="description" content="gmail-mcp is a personal, local MCP server that lets Claude Code search the owner's own Gmail accounts read-only.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>gmail-<span>mcp</span></h1>
+  <p class="sub">A personal, local Model Context Protocol (MCP) server for read-only Gmail search.</p>
+
+  <h2>What it is</h2>
+  <p>gmail-mcp is a small Python program that runs on its owner's own computer. It lets
+  <a href="https://claude.com/claude-code">Claude Code</a> search and read messages in the owner's
+  Gmail accounts so that questions like “when did I order the dishwasher?” can be answered from mail
+  across several mailboxes at once.</p>
+
+  <h2>Who it is for</h2>
+  <p>This application is private. It is used only by its author, Albert Collver, with his own Google
+  accounts. It is not offered to the public, is not distributed, and has no users other than its owner.</p>
+
+  <h2>What it accesses</h2>
+  <ul>
+    <li>Google scope requested: <code>https://www.googleapis.com/auth/gmail.readonly</code> only.</li>
+    <li>It can search and read mail. It cannot send, delete, label or otherwise modify anything.</li>
+    <li>All processing happens locally on the owner's Mac. No mail content is sent to any server other than Google's Gmail API.</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>See the <a href="privacy.html">privacy policy</a>.</p>
+
+  <footer>
+    gmail-mcp is a personal tool by <a href="https://abc3-mac.github.io">Albert Collver</a>.
+    Contact: <a href="mailto:collverab3@gmail.com">collverab3@gmail.com</a>
+  </footer>
+</main>
+</body>
+</html>
